@@ -25,15 +25,15 @@ int szelesseg_eldontese(int szint)
     int szelesseg;
     if (szint==1)
     {
-        szelesseg=20;
+        szelesseg=40;
     }
     if (szint==2)
     {
-        szelesseg=40;
+        szelesseg=60;
     }
     if (szint==3)
     {
-        szelesseg=60;
+        szelesseg=80;
     }
     return szelesseg;
 }
@@ -64,7 +64,7 @@ int isBottom(int x, int y, int magassag,int szelesseg)
         else return 0;
 }
 
-void rajzolPalya(int magassag,int szelesseg)
+void rajzolElsoSzintPalya(int magassag,int szelesseg)
 {
     for (int i=0;i<magassag;i++)
     {
@@ -81,8 +81,56 @@ void rajzolPalya(int magassag,int szelesseg)
             }
             else if (isBottom(i,j,magassag,szelesseg)==1)
                 printf("#");
-            else
-                printf(" ");
+            else if ((i>0)&&(i<5)&&((j==2)||(j==13)||(j==23)||(j==25)))
+                {
+                    printf("#");
+                }
+            else if ((i==1)&&((j==4)||(j==11)))
+            {
+                printf("#");
+            }
+            else if ((i==2)&&(j>3)&&(j<12))
+                printf("#");
+            else if ((i==4)&&(j>2)&&(j<12))
+                printf("#");
+            else if ((i>4)&&(i<18)&&(j==11))
+                printf("#");
+            else if ((i==7)&&(j>12)&&(j<39))
+                printf("#");
+            else if ((i==5)&&(((j>12)&&(j<24))||(j>24)&&(j<39)))
+                printf("#");
+            else if ((j==13)&&(((i>7)&&(i<10))||((i>10)&&(i<16))))
+                printf("#");
+            else if ((i==15)&&(j>12)&&(j<39))
+                printf("#");
+            else if ((i==17)&&(((j>11)&&(j<24))||((j>24)&&(j<39))))
+                printf("#");
+            else if ((i==18)&&((j==23)||(j==25)))
+                printf("#");
+            else printf(" ");
+
+        }
+    }
+}
+
+void rajzolMasodikSzintPalya(int magassag,int szelesseg)
+{
+    for (int i=0;i<magassag;i++)
+    {
+        for (int j=0;j<szelesseg;j++)
+        {
+            if (isTop(i,j,magassag,szelesseg)==1)
+                printf("#");
+            else if (isLeftWall(i,j,magassag,szelesseg)==1)
+                printf("#");
+            else if (isRightWall(i,j,magassag,szelesseg)==1)
+            {
+                printf("#");
+                printf("\n");
+            }
+            else if (isBottom(i,j,magassag,szelesseg)==1)
+                printf("#");
+            //else if ()
         }
     }
 }

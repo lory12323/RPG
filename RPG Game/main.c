@@ -11,7 +11,16 @@ int main()
     szelesseg=szelesseg_eldontese(szint);
 
 
-    rajzolPalya(magassag,szelesseg);
+    rajzolElsoSzintPalya(magassag,szelesseg);
+
+    for (int i=0;i<magassag;i++)
+    {
+        for (int j=0;j<szelesseg;j++)
+        {
+            if ((j==9)&&(i==23))
+                printf("_|_");
+        }
+    }
 
     return 0;
 }

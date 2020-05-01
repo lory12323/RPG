@@ -15,6 +15,7 @@ int isTop(int x,int y,int magassag,int szelesseg);
 int isLeftWall(int x,int y,int magassag,int szelesseg);
 int isRightWall(int x,int y,int magassag,int szelesseg);
 int isBottom(int x,int y,int magassag,int szelesseg);
-void rajzolPalya(int magassag,int szelesseg);
+void rajzolElsoSzintPalya(int magassag,int szelesseg);
+void rajzolMasodikSzintPalya(int magassag,int szelesseg);
 
 #endif // JATEK_H_INCLUDED
