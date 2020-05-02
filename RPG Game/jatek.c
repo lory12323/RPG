@@ -2,40 +2,49 @@
 #include <stdlib.h>
 #include "jatek.h"
 
-int magassag_eldontese(int szint)
+void magassag_eldontese(int szint, koordinatak* koordinatak)
 {
     int magassag;
     if (szint==1)
     {
-        magassag=20;
+        koordinatak->y=20;
+        printf("%d",koordinatak->y);
     }
     if (szint==2)
     {
-        magassag=40;
+        koordinatak->y=40;
     }
     if (szint==3)
     {
-        magassag=60;
+        koordinatak->y=60;
     }
-    return magassag;
 }
 
-int szelesseg_eldontese(int szint)
+void szelesseg_eldontese(int szint,koordinatak* koordinatak)
 {
     int szelesseg;
     if (szint==1)
     {
-        szelesseg=40;
+        koordinatak->x=40;
     }
     if (szint==2)
     {
-        szelesseg=60;
+        koordinatak->x=60;
     }
     if (szint==3)
     {
-        szelesseg=80;
+        koordinatak->x=80;
     }
-    return szelesseg;
+}
+
+int palyaMemoriaFoglalasa(int **palya,koordinatak* koordinatak)
+{
+    palya=(int**)malloc(koordinatak->x*sizeof(int*));
+    for (int i=0;i<koordinatak->x;i++)
+    {
+        palya[i]=(int*)malloc(koordinatak->y*sizeof(int));
+    }
+    return palya;
 }
 
 int isTop(int x,int y,int magassag,int szelesseg)
@@ -43,7 +52,7 @@ int isTop(int x,int y,int magassag,int szelesseg)
     if ((x==0)&&(y>=0)&&(y<szelesseg-1))
         return 1;
         else return 0;
-}
+}/*
 int isLeftWall(int x,int y,int magassag,int szelesseg)
 {
     if ((y==0)&&(x>0)&&(x<magassag))
@@ -111,9 +120,9 @@ void rajzolElsoSzintPalya(int magassag,int szelesseg)
 
         }
     }
-}
+}*/
 
-void rajzolMasodikSzintPalya(int magassag,int szelesseg)
+/*void rajzolMasodikSzintPalya(int magassag,int szelesseg)
 {
     for (int i=0;i<magassag;i++)
     {
@@ -131,6 +140,20 @@ void rajzolMasodikSzintPalya(int magassag,int szelesseg)
             else if (isBottom(i,j,magassag,szelesseg)==1)
                 printf("#");
             //else if ()
+        }
+    }
+}*/
+
+void inicializalPalya(koordinatak* koordinatak,int **palya)
+{
+    palya=palyaMemoriaFoglalasa(palya,koordinatak);
+
+    for (int i=0;i<koordinatak->x;i++)
+    {
+        for (int j=0;i<koordinatak->y;j++)
+        {
+            if (isTop(i,j,koordinatak->y,koordinatak->x)==1)
+                palya[i][j]=1;
         }
     }
 }
