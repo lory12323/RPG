@@ -1,22 +1,23 @@
 #ifndef JATEK_H_INCLUDED
 #define JATEK_H_INCLUDED
 
-typedef struct koordinatak
+typedef struct Kordinatak
 {
     int x;
     int y;
-}koordinatak;
+}Koordinatak;
 
 
-void magassag_eldontese(int szint,koordinatak* koordinatak);
-void szelesseg_eldontese(int szint, koordinatak* koordinatak);
-int palyaMemoriaFoglalasa(int **palya,koordinatak* koordinatak);
-int isTop(int x,int y,int magassag,int szelesseg);
-int isLeftWall(int x,int y,int magassag,int szelesseg);
-int isRightWall(int x,int y,int magassag,int szelesseg);
-int isBottom(int x,int y,int magassag,int szelesseg);
-void rajzolElsoSzintPalya(int magassag,int szelesseg);
-void rajzolMasodikSzintPalya(int magassag,int szelesseg);
-void inicializalPalya(koordinatak* koordinatak,int **palya);
+Koordinatak* koordinatak_letrehozasa();
+void magassag_eldontese(int szint,Koordinatak* koordinatak);
+void szelesseg_eldontese(int szint, Koordinatak* koordinatak);
+int palyaMemoriaFoglalasa(Koordinatak* koordinatak);
+int isTop(int i,int j,int magassag,int szelesseg);
+int isLeftWall(int i,int j,int magassag,int szelesseg);
+int isRightWall(int i,int j,int magassag,int szelesseg);
+int isBottom(int i,int j,int magassag,int szelesseg);
+int inicializalPalya(Koordinatak* koordinatak,int **palya);
+int kirajzolPalya(Koordinatak* koordinatak, int **palya);
+int letrehozPalyaMasodikSzint(Koordinatak* koordinatak,int **palya);
 
 #endif // JATEK_H_INCLUDED

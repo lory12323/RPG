@@ -1,12 +1,14 @@
 # depslib dependency file v1.0
-1588435177 source:d:\egyetem\adatszerkezetek\rpg game\rpg\rpg game\main.c
+1588977421 source:d:\egyetem\adatszerkezetek\rpg game\rpg\rpg game\main.c
 	<stdio.h>
 	<stdlib.h>
+	<stdbool.h>
+	<string.h>
 	"jatek.h"
 
-1588435223 d:\egyetem\adatszerkezetek\rpg game\rpg\rpg game\jatek.h
+1588972401 d:\egyetem\adatszerkezetek\rpg game\rpg\rpg game\jatek.h
 
-1588435168 source:d:\egyetem\adatszerkezetek\rpg game\rpg\rpg game\jatek.c
+1588977183 source:d:\egyetem\adatszerkezetek\rpg game\rpg\rpg game\jatek.c
 	<stdio.h>
 	<stdlib.h>
 	"jatek.h"
