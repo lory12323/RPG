@@ -126,7 +126,7 @@ int main()
                 int eredmeny;
                 system("cls");
 
-                printf("1000-hez adj hozza 40-et. Most 1000-et. Aztan 30-at. Majd ismet 1000-et.\nMost 20-et. Ujra 1000-et, vegul 10-et.\nMennyi jott ki ?\n");
+                printf("1000-hez adj hozza 40-et. Most 1000-et. Aztan 30-at. Majd ismet 1000-et.\nMost 20-at. Ujra 1000-et, vegul 10-et.\nMennyi jott ki ?\n");
                 scanf("%d",&eredmeny);
 
                 if (eredmeny!=4100)
@@ -340,6 +340,27 @@ int main()
                 break;
             }
 
+            if ((i==13)&&((j==49)||(j==50)))
+            {
+                system("cls");
+
+                char valasz[]="semmi";
+                char jatekos[20];
+
+                printf("A gazdagnak erre van szuksege, a szegenynek csak ez van. Mi ez?\n");
+
+                scanf("%[^\n]",jatekos);
+
+                if ((strcmp(jatekos,valasz))!=0)
+                {
+                    system("cls");
+                    printf("Rossz a valasz\nGAME OVER");
+                    counter++;
+                    break;
+                }
+                system("cls");
+            }
+
             palya[i][j]=' ';
             i--;
             palya[i][j]='.';
@@ -355,6 +376,26 @@ int main()
                 counter++;
                 printf("GAME OVER\nNekimentel a falnak\nBetter luck next time :)");
                 break;
+            }
+
+            if ((i==19)&&((j==49)||(j==50)))
+            {
+                system("cls");
+                char valasz[]="tukor";
+                char jatekos[10];
+
+                printf("Melyik kor lehet szogletes ?\n");
+                scanf("%s",jatekos);
+
+                if (strcmp(valasz,jatekos)!=0)
+                {
+                    system("cls");
+
+                    printf("Sajnos rossz valaszt adtal :(\nGAME OVER");
+                    counter++;
+                    break;
+                }
+                system("cls");
             }
 
             palya[i][j]=' ';
@@ -406,6 +447,7 @@ int main()
             gameRunning=false;
         if (szint!=2)
             break;
+        printf("%d %d",i,j);
     }
 
     return 0;
