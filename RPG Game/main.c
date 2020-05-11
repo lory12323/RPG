@@ -126,7 +126,7 @@ int main()
                 int eredmeny;
                 system("cls");
 
-                printf("1000-hez adj hozza 40-et. Most 1000-et. Aztan 30-at. Majd ismet 1000-et.\nMost 20-at. Ujra 1000-et, vegul 10-et.\nMennyi jott ki ?\n");
+                printf("1000-hez adj hozza 40-et. Most 1000-et. Aztan 30-at. Majd ismet 1000-et.\nMost 20-at. Ujra 1000-et, vegul 10-et.\nMennyi jott ki ?  (Nem szabad szamologepet hasznaljal)\n");
                 scanf("%d",&eredmeny);
 
                 if (eredmeny!=4100)
@@ -195,6 +195,33 @@ int main()
         case 'd':
             system("cls");
 
+            if ((i==10)&&(j==12))
+            {
+                system("cls");
+                char valasz[]="tegnapelott,tegnap,ma,holnap,holnaputan";
+                char jatekos[50];
+                char temp;
+
+                printf("Sorold fel a het ot napjat ugy,hogy nem mondod ki a nevuket, sem a szamukat\n");
+
+                scanf("%c",&temp);
+                scanf("%[^\n]",jatekos);
+
+                if ((strcmp(jatekos,valasz))!=0)
+                {
+                    system("cls");
+                    printf("Vagy nem jo a valasz vagy nem jo sorrendbe irtad be oket\nProbald ki mas sorrendbe is");
+                    counter++;
+                    break;
+                }
+                szint++;
+                system("cls");
+                printf("Gratulalok, megkaptad a titkos atjaratot a kovetkezo szintre\nKezdodjon a masodik szint\n[Press any key to continue]\n");
+                getch();
+                system("cls");
+                break;
+            }
+
             if ((j==koordinatak->y-2)||(palya[i][j+1]=='#'))
             {
                 counter++;
@@ -236,33 +263,6 @@ int main()
                     break;
                 }
                 system("cls");
-            }
-
-            if ((i==10)&&(j==12))
-            {
-                system("cls");
-                char valasz[]="tegnapelott,tegnap,ma,holnap,holnaputan";
-                char jatekos[50];
-                char temp;
-
-                printf("Sorold fel a het ot napjat ugy,hogy nem mondod ki a nevuket, sem a szamukat\n");
-
-                scanf("%c",&temp);
-                scanf("%[^\n]",jatekos);
-
-                if ((strcmp(jatekos,valasz))!=0)
-                {
-                    system("cls");
-                    printf("Vagy nem jo a valasz vagy nem jo sorrendbe irtad be oket\nProbald ki mas sorrendbe is");
-                    counter++;
-                    break;
-                }
-                szint++;
-                system("cls");
-                printf("Gratulalok, megkaptad a titkos atjaratot a kovetkezo szintre\nKezdodjon a masodik szint\n[Press any key to continue]\n");
-                getch();
-                system("cls");
-                break;
             }
 
             if ((i==16)&&(j==13))

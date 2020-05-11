@@ -111,7 +111,7 @@ int inicializalPalya(Koordinatak* koordinatak,int **palya)
                 palya[i][j]='#';
             else if ((i==5)&&(((j>12)&&(j<24))||(j>24)&&(j<39)))
                 palya[i][j]='#';
-            else if ((j==13)&&(((i>7)&&(i<10))||((i>10)&&(i<16))))
+            else if ((j==13)&&((i>7)&&(i<16)))
                 palya[i][j]='#';
             else if ((i==15)&&(j>12)&&(j<39))
                 palya[i][j]='#';
