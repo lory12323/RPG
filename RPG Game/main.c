@@ -349,12 +349,32 @@ int main()
 
                 printf("A gazdagnak erre van szuksege, a szegenynek csak ez van. Mi ez?\n");
 
-                scanf("%[^\n]",jatekos);
+                scanf("%s",jatekos);
 
                 if ((strcmp(jatekos,valasz))!=0)
                 {
                     system("cls");
                     printf("Rossz a valasz\nGAME OVER");
+                    counter++;
+                    break;
+                }
+                system("cls");
+            }
+
+            if ((i==26)&&(j==25))
+            {
+                system("cls");
+                char valasz[]="McDonalds";
+                char jatekos[10];
+
+                printf("Mi lesz a kacsa es a kecske keresztezodesebol ?\n");
+                scanf("%s",&jatekos);
+
+                if (strcmp(valasz,jatekos)!=0)
+                {
+                    system("cls");
+
+                    printf("Gondold at jobban\nGAME OVER");
                     counter++;
                     break;
                 }
@@ -398,6 +418,26 @@ int main()
                 system("cls");
             }
 
+            if ((i==26)&&(j==39))
+            {
+                system("cls");
+                char valasz[]="feny";
+                char jatekos[10];
+
+                printf("Megtoltok egy egesz szobat, megis barmi befer tolem. Mi vagyok ?\n");
+                scanf("%s",&jatekos);
+
+                if (strcmp(valasz,jatekos)!=0)
+                {
+                    system("cls");
+
+                    printf("Helytelen valasz\nGAME OVER");
+                    counter++;
+                    break;
+                }
+                system("cls");
+            }
+
             palya[i][j]=' ';
             i++;
             palya[i][j]='.';
@@ -412,6 +452,109 @@ int main()
             {
                 counter++;
                 printf("GAME OVER\nNekimentel a falnak\nBetter luck next time :)");
+                break;
+            }
+
+            if ((i==10)&&(j==39))
+            {
+                system("cls");
+                int x;
+
+                printf("Ha egy futoversenyen megelozod a masodikat, hanyadik helyen vegzel ?\n");
+                scanf("%d",&x);
+
+                if (x!=2)
+                {
+                    system("cls");
+
+                    printf("Sajnalom de nem jo a valasz\nGAME OVER");
+                    counter++;
+                    break;
+                }
+                system("cls");
+            }
+
+            if ((i==6)&&(j==35))
+            {
+                system("cls");
+                int x;
+
+                printf("Van nyolc ego gyertyad, amibol harmat eloltasz.\nHany gyertyad marad ?\n");
+
+                scanf("%d",&x);
+
+                if (x!=3)
+                {
+                    system("cls");
+
+                    printf("Sajnalom, de helytelen a valasz\nGAME OVER");
+                    counter++;
+                    break;
+                }
+                system("cls");
+            }
+
+            if ((i==12)&&(j==4))
+            {
+                system("cls");
+                char valasz[]="nem";
+                char jatekos[10];
+
+                printf("Legalis-e Magyarorszagon, hogy egy ferfi az ozvegyenek a\nhugat vegye felesegul ?\n");
+                scanf("%s",jatekos);
+
+                if (strcmp(valasz,jatekos)!=0)
+                {
+                    system("cls");
+
+                    printf("Gondold at jobban\nGAME OVER");
+                    counter++;
+                    break;
+                }
+                system("cls");
+            }
+
+            if ((i==18)&&(j==31))
+            {
+                system("cls");
+                int x;
+
+                printf("Oszd el a 30-at fellel, es az eredmenyhez adj hozza 10-et.\nMennyi jott ki ?\n");
+                scanf("%d",&x);
+
+                if (x!=70)
+                {
+                    system("cls");
+                    printf("Nem jo a valasz\nGAME OVER");
+
+                    counter++;
+                    break;
+                }
+                system("cls");
+            }
+
+            if ((i==16)&&(j==2))
+            {
+                system("cls");
+                char valasz[]="koporso";
+                char jatekos[15];
+
+                printf("Aki kesziti annak nem kell. Aki megveszi, az nem hasznalja.\nAki hasznalja, nem tud rola. Mi az ?\n");
+                scanf("%s",jatekos);
+
+                if (strcmp(valasz,jatekos)!=0)
+                {
+                    system("cls");
+
+                    printf("Nem jo a valasz\nGAME OVER");
+                    counter++;
+                    break;
+                }
+                szint++;
+                system("cls");
+                printf("Gratulalok, tovabb jutottal a kovetkezo szintre");
+                getch();
+                system("cls");
                 break;
             }
 
@@ -432,6 +575,26 @@ int main()
                 break;
             }
 
+            if ((i==34)&&(j==26))
+            {
+                system("cls");
+                char valasz[]="nem";
+                char jatekos[10];
+
+                printf("Ha egy ejjeli or reggel hal meg, kaphat-e nyugdijat ?\n");
+                scanf("%s",&jatekos);
+
+                if (strcmp(valasz,jatekos)!=0)
+                {
+                    system("cls");
+
+                    printf("Sajnalom de nem jo a valasz\nGAME OVER");
+                    counter++;
+                    break;
+                }
+                system("cls");
+            }
+
             palya[i][j]=' ';
             j++;
             palya[i][j]='.';
@@ -447,7 +610,6 @@ int main()
             gameRunning=false;
         if (szint!=2)
             break;
-        printf("%d %d",i,j);
     }
 
     return 0;
