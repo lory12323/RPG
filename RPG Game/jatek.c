@@ -37,7 +37,7 @@ void szelesseg_eldontese(int szint,Koordinatak* koordinatak)
     }
     if (szint==3)
     {
-        koordinatak->y=80;
+        koordinatak->y=100;
     }
 }
 
@@ -232,6 +232,30 @@ int letrehozPalyaMasodikSzint(Koordinatak* koordinatak, int **palya)
             else if ((j==48)&&((i>11)&&(i<19)))
                 palya[i][j]='#';
             else if ((j==51)&&(((i>9)&&(i<14))||((i>16)&&(i<21))))
+                palya[i][j]='#';
+            else palya[i][j]=' ';
+        }
+    }
+    return palya;
+}
+
+int letrehozPalyaHarmadikSzint(Koordinatak* koordinatak, int **palya)
+{
+    palya=palyaMemoriaFoglalasa(koordinatak);
+
+    for (int i=0;i<koordinatak->x;i++)
+    {
+        for (int j=0;j<koordinatak->y;j++)
+        {
+            if (isTop(i,j,koordinatak->x,koordinatak->y)==1)
+                palya[i][j]='#';
+            else if (isLeftWall(i,j,koordinatak->x,koordinatak->y)==1)
+                palya[i][j]='#';
+            else if (isRightWall(i,j,koordinatak->x,koordinatak->y)==1)
+                palya[i][j]='#';
+            else if (isBottom(i,j,koordinatak->x,koordinatak->y)==1)
+                palya[i][j]='#';
+            else if (((j==43)||(j==45))&&((i>46)&&(j<59)))
                 palya[i][j]='#';
             else palya[i][j]=' ';
         }

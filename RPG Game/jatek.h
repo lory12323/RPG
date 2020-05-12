@@ -19,5 +19,6 @@ int isBottom(int i,int j,int magassag,int szelesseg);
 int inicializalPalya(Koordinatak* koordinatak,int **palya);
 int kirajzolPalya(Koordinatak* koordinatak, int **palya);
 int letrehozPalyaMasodikSzint(Koordinatak* koordinatak,int **palya);
+int letrehozPalyaHarmadikSzint(Koordinatak* koordinatak,int **palya);
 
 #endif // JATEK_H_INCLUDED
