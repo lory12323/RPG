@@ -27,7 +27,9 @@ int main()
 
     printf("A feladat az, hogy keresd meg a kijaratot a labirintusbol.\nCsak akkor tudsz tovabb lepni az akadalyokon, ha azokra jol valaszolsz.\nSok sikert !!\n\n!!Vigyazat a jatek CASE SENSITIVE\n\n[Press any key to start the game]");
     getch();
+
     system("cls");
+
     kirajzolPalya(koordinatak,palya);
 
     while(gameRunning)
@@ -272,7 +274,7 @@ int main()
                 char jatekos[50];
                 char temp;
 
-                printf("Jani anyukajanak negy gyereke van. Az elso Aprilis, a masodik Junius,\nA harmadik Junius. Hogy hivjak a negyediket ?\n");
+                printf("Jani anyukajanak negy gyereke van. Az elso Aprilis, a masodik Junius,\nA harmadik Julius. Hogy hivjak a negyediket ?\n");
 
                 scanf("%c",&temp);
                 scanf("%[^\n]",jatekos);
@@ -500,7 +502,7 @@ int main()
                 char valasz[]="nem";
                 char jatekos[10];
 
-                printf("Legalis-e Magyarorszagon, hogy egy ferfi az ozvegyenek a\nhugat vegye felesegul ?\n");
+                printf("Legalis-e Magyarorszagon, hogy egy ferfi az ozvegyenek a hugat vegye felesegul ?\n");
                 scanf("%s",jatekos);
 
                 if (strcmp(valasz,jatekos)!=0)
