@@ -35,6 +35,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="jatek.h" />
+		<Unit filename="kerdesek.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

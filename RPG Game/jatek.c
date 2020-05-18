@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <string.h>
 #include "jatek.h"
 
 Koordinatak* koordinatak_letrehozasa()
@@ -261,4 +263,379 @@ int letrehozPalyaHarmadikSzint(Koordinatak* koordinatak, int **palya)
         }
     }
     return palya;
+}
+
+int kerdes()
+{
+    int szam,eredmeny,x,szamlalo;
+    szamlalo=0;
+    int random;
+    char temp;
+    char valasz;
+    char jatekos[50];
+    random=(rand()%(19-1+1)) + 1;
+    switch(random){
+    case 1:
+        system("cls");
+
+        printf("7-5+2= ");
+        scanf("%d",&szam);
+        if (szam!=4)
+        {
+            system("cls");
+            printf("Sajnalom de nem folytathatja a jatekot\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+        break;
+    case 2:
+        strcpy(&valasz,"nem egymassal jatszodtak");
+        system("cls");
+
+        printf("Ket ember sakkozik. Mar lejatszottak 5 jatszmat, es mind a ketten harmat nyertek. Hogyan lehetseges ez ?\n");
+
+        scanf("%[^\n]",jatekos);
+
+        if ((strcmp(jatekos,&valasz))!=0)
+        {
+            system("cls");
+            printf("Rossz valasz\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 3:
+        system("cls");
+
+        printf("Van 10 hal egy zart akvariumban. 2 elsullyedt, 4 eluszott, 3 meghalt. Hany hal van most az akvariumban ?\n");
+        scanf("%d",&szam); //10, mert egy sem hagyta el az akvariumot
+
+        if (szam!=10)
+        {
+            system("cls");
+            printf("Sajnalom de nem annyi hal van az akvariumban, gondold at jobban kovetkezore\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 4:
+        system("cls");
+
+        printf("1000-hez adj hozza 40-et. Most 1000-et. Aztan 30-at. Majd ismet 1000-et.\nMost 20-at. Ujra 1000-et, vegul 10-et.\nMennyi jott ki ?  (Nem szabad szamologepet hasznaljal)\n");
+        scanf("%d",&eredmeny);
+
+        if (eredmeny!=4100)
+        {
+            system("cls");
+            printf("Szamolj ujra\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 5:
+        system("cls");
+
+        printf("3*2-1*0+2/2=");
+        scanf("%d",&eredmeny);
+
+        if (eredmeny!=7)
+        {
+            system("cls");
+            printf("Szamolj ujra\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 6:
+        system("cls");
+        strcpy(&valasz,"tegnapelott,tegnap,ma,holnap,holnaputan");
+
+        printf("Sorold fel a het ot napjat ugy,hogy nem mondod ki a nevuket, sem a szamukat\n");
+
+        scanf("%[^\n]",jatekos);
+
+        printf("%s\n",&valasz);
+
+        getch();
+
+        printf("%s\n",jatekos);
+
+        getch();
+
+        x=strcmp(jatekos,&valasz);
+
+        getch();
+
+        szamlalo=0;
+
+        if (x!=0)
+        {
+            system("cls");
+            printf("Vagy nem jo a valasz vagy nem jo sorrendbe irtad be oket\nProbald ki mas sorrendbe is");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 7:
+        system("cls");
+
+        printf ("7 szenarakas meg 5 szenarakas egyutt hany szenarakas ?  (szamban add meg)\n");
+        scanf("%d",&szam);
+        if (szam!=1)
+        {
+            system("cls");
+            printf("Nem jo valasz, gondold at jobban\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 8:
+        system("cls");
+
+        printf("Ha kilencszer egymas utan feldobsz egy penzermet\nes mind a kilencszer iras lesz, akkor hany szazalek az esely arra, hogy tizedikre fej lesz ?\n");
+        scanf("%d",&szam);
+
+        if (szam!=50)
+        {
+            system("cls");
+            printf("Helytelen valasz\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 9:
+        system("cls");
+        strcpy(&valasz,"Jani");
+
+        printf("Jani anyukajanak negy gyereke van. Az elso Aprilis, a masodik Junius,\nA harmadik Julius. Hogy hivjak a negyediket ?\n");
+
+        scanf("%s",jatekos);
+
+        if ((strcmp(jatekos,&valasz))!=0)
+        {
+            system("cls");
+            printf("Nem jo a valasz\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 10:
+        system("cls");
+
+        strcpy(&valasz,"semmi");
+
+        printf("A gazdagnak erre van szuksege, a szegenynek csak ez van. Mi ez?\n");
+
+        scanf("%s",jatekos);
+
+        if ((strcmp(jatekos,&valasz))!=0)
+        {
+            system("cls");
+            printf("Rossz a valasz\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 11:
+        system("cls");
+        strcpy(&valasz,"McDonalds");
+
+        printf("Mi lesz a kacsa es a kecske keresztezodesebol ?\n");
+        scanf("%s",&jatekos);
+
+        if (strcmp(&valasz,jatekos)!=0)
+        {
+            system("cls");
+
+            printf("Gondold at jobban\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 12:
+        system("cls");
+        strcpy(&valasz,"tukor");
+
+        printf("Melyik kor lehet szogletes ?\n");
+        scanf("%s",jatekos);
+
+        if (strcmp(&valasz,jatekos)!=0)
+        {
+            system("cls");
+
+            printf("Sajnos rossz valaszt adtal :(\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 13:
+        system("cls");
+        strcpy(&valasz,"feny");
+
+        printf("Megtoltok egy egesz szobat, megis barmi befer tolem. Mi vagyok ?\n");
+        scanf("%s",&jatekos);
+
+        if (strcmp(&valasz,jatekos)!=0)
+        {
+            system("cls");
+
+            printf("Helytelen valasz\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 14:
+        system("cls");
+
+        printf("Ha egy futoversenyen megelozod a masodikat, hanyadik helyen vegzel ?\n");
+        scanf("%d",&x);
+
+        if (x!=2)
+        {
+            system("cls");
+
+            printf("Sajnalom de nem jo a valasz\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 15:
+        system("cls");
+
+        printf("Van nyolc ego gyertyad, amibol harmat eloltasz.\nHany gyertyad marad ?\n");
+
+        scanf("%d",&x);
+
+        if (x!=3)
+        {
+            system("cls");
+
+            printf("Sajnalom, de helytelen a valasz\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 16:
+        system("cls");
+        strcpy(&valasz,"nem");
+
+        printf("Legalis-e Magyarorszagon, hogy egy ferfi az ozvegyenek a hugat vegye felesegul ?\n");
+        scanf("%s",jatekos);
+
+        if (strcmp(&valasz,jatekos)!=0)
+        {
+            system("cls");
+
+            printf("Gondold at jobban\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 17:
+        system("cls");
+
+        printf("Oszd el a 30-at fellel, es az eredmenyhez adj hozza 10-et.\nMennyi jott ki ?\n");
+        scanf("%d",&x);
+
+        if (x!=70)
+        {
+            system("cls");
+            printf("Nem jo a valasz\nGAME OVER");
+
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 18:
+        system("cls");
+        strcpy(&valasz,"koporso");
+
+        printf("Aki kesziti annak nem kell. Aki megveszi, az nem hasznalja.\nAki hasznalja, nem tud rola. Mi az ?\n");
+        scanf("%s",jatekos);
+
+        if (strcmp(&valasz,jatekos)!=0)
+        {
+            system("cls");
+
+            printf("Nem jo a valasz\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    case 19:
+        system("cls");
+        strcpy(&valasz,"nem");
+
+        printf("Ha egy ejjeli or reggel hal meg, kaphat-e nyugdijat ?\n");
+        scanf("%s",&jatekos);
+
+        if (strcmp(&valasz,jatekos)!=0)
+        {
+            system("cls");
+
+            printf("Sajnalom de nem jo a valasz\nGAME OVER");
+            szamlalo++;
+            break;
+        }
+
+        system("cls");
+
+        break;
+    default:
+        break;
+    }
+    return szamlalo;
 }
